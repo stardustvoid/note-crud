@@ -53,7 +53,7 @@ if ($user) {
 
 $query = 'INSERT INTO users (name, email, password) VALUES (:name, :email, :password)';
 
-$db->query($query, [':name' => $name, ':email' => $email, ':password' => $password]);
+$db->query($query, [':name' => $name, ':email' => $email, ':password' => password_hash($password, PASSWORD_BCRYPT)]);
 
 //write name and email to session
 
