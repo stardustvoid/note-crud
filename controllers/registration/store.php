@@ -55,9 +55,9 @@ $query = 'INSERT INTO users (name, email, password) VALUES (:name, :email, :pass
 
 $db->query($query, [':name' => $name, ':email' => $email, ':password' => password_hash($password, PASSWORD_BCRYPT)]);
 
-//write name and email to session
+//login user
 
-$_SESSION['user'] = $name;
+login(['name' => $name]);
 
 //redirect to home page
 
