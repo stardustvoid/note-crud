@@ -4,16 +4,16 @@ namespace Core;
 
 class Authenticator
 {
-    public function attempt($email, $password)
+    public function attempt($attributes)
     {
         $db = App::resolve(Database::class);
 
         $query = 'SELECT * FROM users WHERE email = :email';
 
-        $user = $db->query($query, [':email' => $email])->get();
+        $user = $db->query($query, [':email' => $attributes['email']])->get();
 
         if ($user) {
-            if (password_verify($password, $user['password'])) {
+            if (password_verify($attributes['password'], $user['password'])) {
                 $this->login($user);
                 return true;
             };
