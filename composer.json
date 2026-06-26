@@ -1,0 +1,16 @@
+{
+  "name": "agniya/note-crud",
+  "authors": [
+    {
+      "name": "stardustvoid",
+      "email": "112036089+stardustvoid@users.noreply.github.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Core\\": "Core/",
+      "Http\\": "Http/"
+    }
+  }
+}
